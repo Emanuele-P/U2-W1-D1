@@ -198,13 +198,6 @@ aside div p:last-child {
   font-size: 0.8em;
   text-align: right;
 }
-#a-container {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 1px solid transparent;
-  background-color: transparent;
-}
 
 /* FOOTER */
 footer {
@@ -299,15 +292,23 @@ footer a {
     padding: 15px 10%;
   }
 
-  .h-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  header {
+    text-align: left;
+    text-align-last: justify;
+    padding: 1em 1.5em;
   }
-
-  header img {
-    width: 150px;
+  header div,
+  header nav,
+  header p {
+    display: inline-block;
+  }
+  header p {
+    margin-bottom: 0;
+  }
+  header div img {
+    vertical-align: middle;
+    width: 30%;
+    margin-bottom: 0;
   }
 
   main {
@@ -332,36 +333,66 @@ footer a {
     padding: 2px;
   }
 
-  .video-container {
-    display: flex;
-    justify-content: center;
-  }
   section {
     border-radius: 20px;
     width: 50%;
     font-size: 1.2em;
+    display: inline-block;
+    vertical-align: middle;
+    height: 220px;
+    margin: 0;
   }
   iframe {
     width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-inline: -2px;
+    height: 220px;
+    margin-bottom: 0;
   }
 
-  #a-container {
-    display: flex;
-    flex-direction: row;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 1px solid transparent;
-    background-color: transparent;
+  aside {
+    margin-top: 2em;
   }
 
-  #a-container div {
-    max-width: 35%;
-    flex: auto;
+  aside div {
+    display: inline-block;
+    width: 33%;
+    margin-inline: -2px;
   }
 
   footer address {
     margin-inline: auto;
     width: 70%;
+  }
+}
+
+@media print {
+  body {
+    font-size: 14px;
+    background-image: none;
+    padding: 0;
+  }
+  main {
+    box-shadow: none;
+    margin: 0;
+  }
+  thead tr {
+    background-color: gray;
+    color: black;
+  }
+  thead tr,
+  tbody tr {
+    border-bottom: 1px solid gray;
+  }
+
+  header,
+  article section,
+  iframe,
+  aside,
+  footer,
+  .social,
+  .toTop {
+    display: none;
   }
 }
